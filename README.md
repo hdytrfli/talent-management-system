@@ -1,61 +1,123 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Talent Management System
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+[![Laravel](https://img.shields.io/badge/Laravel-12-red?logo=laravel)](https://laravel.com)
+[![PHP](https://img.shields.io/badge/PHP-8.2-blue?logo=php)](https://php.net)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?logo=tailwind-css)](https://tailwindcss.com)
+[![Vite](https://img.shields.io/badge/Vite-8.0-blue?logo=vite)](https://vitejs.dev)
 
-## About Laravel
+A Laravel 12 application for managing employee evaluations, training programs, and succession planning. The system helps organizations track employee performance through KPI-based evaluations, manage training initiatives, and identify high-potential employees using the nine-box matrix framework for talent development and career planning.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+![Talent Management System Dashboard](.github/assets/screenshot.webp)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Features
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Core Modules
 
-## Learning Laravel
+- **Employee Management** - Employee database with department and position tracking
+- **Performance Evaluations** - KPI-based evaluation system with scoring and approval workflows
+- **Training & Development** - Training program management with employee assignments
+- **Talent Pool** - Nine-box matrix and succession planning
+- **Feedback System** - Feedback collection and management
+- **Dashboard Analytics** - Charts and metrics for performance insights
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Role-Based Access Control
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+| Role | Permissions |
+|------|-------------|
+| **System Administrator** | Full system access, user management, configuration |
+| **People Development** | Training, evaluations, employee development |
+| **Manager** | Team evaluations, training assignments, performance reviews |
+| **Supervisor** | Employee oversight, evaluation participation |
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Key Capabilities
 
-## Laravel Sponsors
+- Multi-period evaluations
+- Excel export for reports and data (via Maatwebsite Excel)
+- File attachments for training materials and documents
+- Email notifications for assignments and updates
+- Responsive UI built with Tailwind CSS and Alpine.js
+- Interactive charts for department analytics and position rankings
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## Tech Stack
 
-### Premium Partners
+- **Backend:** Laravel 12, PHP 8.2+
+- **Frontend:** Blade Templates, Alpine.js, Tailwind CSS
+- **Icons:** Lucide Icons
+- **Database:** MySQL/PostgreSQL/SQLite
+- **Dev Tools:** Vite, Laravel Breeze
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development/)**
-- **[Active Logic](https://activelogic.com)**
+## Prerequisites
 
-## Contributing
+- PHP 8.2 or higher
+- Composer
+- Node.js & npm/pnpm
+- SQLite, MySQL, or PostgreSQL
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## Installation
 
-## Code of Conduct
+### 1. Clone the Repository
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+```bash
+git clone https://github.com/yourusername/talent-management-system.git
+cd talent-management-system
+```
 
-## Security Vulnerabilities
+### 2. Install Dependencies
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```bash
+# Install PHP dependencies
+composer install
+
+# Install Node.js dependencies
+pnpm install
+# or npm install
+```
+
+### 3. Environment Configuration
+
+```bash
+# Copy environment file
+cp .env.example .env
+
+# Generate application key
+php artisan key:generate
+```
+
+### 4. Database Setup
+
+```bash
+# Create database (for MySQL/PostgreSQL)
+# Then run migrations
+php artisan migrate
+```
+
+### 5. Build Assets
+
+```bash
+# Development
+pnpm dev
+
+# Production
+pnpm build
+```
+
+### 6. Run the Application
+
+```bash
+# Start development server
+php artisan serve
+```
+
+Visit `http://localhost:8000` in your browser.
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+This project is open-sourced software licensed under the [GNU General Public License v3.0](LICENSE).
+
+## Support
+
+For support, please open an issue in the repository or contact the development team.
+
+---
+
+Built with Laravel
